@@ -8,12 +8,15 @@ import {
   Text,
 } from 'react-native';
 import {useAntMedia, rtc_view} from '@antmedia/react-native-ant-media';
+import { useTranslation } from 'react-i18next';
 
 import InCallManager from 'react-native-incall-manager';
 
-export default function App() {
+export default function Home() {
+  const { t } = useTranslation();
+
   var defaultStreamName = 'streamTest1';
-  const webSocketUrl = 'ws://192.168.1.188:5080/WebRTCAppEE/websocket';
+  const webSocketUrl = 'ws://192.168.1.188:5080/WebRTCApp/websocket';
   //or webSocketUrl: 'wss://server.com:5443/WebRTCAppEE/websocket',
 
   const streamNameRef = useRef<string>(defaultStreamName);
